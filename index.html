@@ -379,13 +379,50 @@
             });
         });
             }
+            function asideani(){
+                $(document).ready(function(){
+            $("aside .wrap ul.list > li h3").hover(function(){
+                if($(window).width()>1200){ //브라우저의 너비가 1200보다 큰 경우에만 실행
+                    $("aside").addClass("sliding");  //'aside' 요소에 'sliding' 클래스 추가
+                    $(this).next().find(".listsub").show(); //현재 h3 요소 다음에 있는 '.listsub' 클래스를 찾아 표시
+                    $(this).parent().siblings().find(".listsub").hide(); //현재 h3(this) 요소의 부모(li)의 형제 요소들 중 '.listsub' 클래스를 갖는 것들을 숨김
+                    $(this).addClass("current");  // 현재 h3 요소에 'current' 클래스 추가(노란색표시)
+                    $(this).next().find(".listsub").addClass("wide");  // 현재 h3 요소 다음에 있는 '.listsub' 클래스에 'wide' 클래스 추가
+                    $(this).parent().siblings().children("h3").removeClass("current"); // 현재 h3 요소의 부모의 형제 요소들 중에 있는 h3 요소의 'current' 클래스를 제거
+                    $(this).parent().siblings().find(".listsub").hide().removeClass("wide"); //현재 h3 요소의 부모의 형제 요소들 중 '.listsub' 클래스를 갖는 것들을 숨김과 동시에 'wide' 클래스를 제거
+                }
+            });
+            //h3 a을 클릭하면 실행하시오
+            $("aside .wrap ul.list > li h3 a").click(function(){
+                // 마우스클릭한 요소 다음에 오는 것을 slideToggle하시오
+                $(this).parent().next().slideToggle();  // 현재 클릭된 링크의 부모 요소의 다음 형제를 슬라이드 토글(토글 효과로 펼치거나 접힘)
+                $(this).parent().parent().siblings().children("div").slideUp();  //현재 클릭된 링크의 부모의 부모의 형제 요소들 중에 있는 모든 'div'를 슬라이드 업(접힘)
+                return false;  //클릭 이벤트의 기본 동작을 막기 위해 false 반환
+            });
+
+            $("aside").mouseleave(function(){
+                $("aside").removeClass("sliding");
+            });
+            //brand를 클릭하면 실행하시오
+            $("header .wrap nav h2").click(function(){
+                //aside에 클래스를 토글하시오
+                $("aside").toggleClass("asideSliding");
+                $("header .wrap nav .wgnb").removeClass("wgnbShow");
+            });
+
+        });
+            }
             $("aside").load("aside.html");
+            //메인로드
+            $("main").load("main.html");
             //footer로드
             $("footer").load("footer.html");
         });
     </script>
     <!-- aside애니 -->
-    <script type="text/javascript"> </script>
+    <script type="text/javascript">
+      
+    </script>	
 </head>
 <body>
     
