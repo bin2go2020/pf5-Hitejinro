@@ -296,45 +296,45 @@
             });
 
             function titleani(){
-            $('.titleani').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                speed:4000,
-                dots:true,
-                arrows:true,
-                responsive:[
-                    {
-                        breakpoint: 1201,
-                        settings: {
-                            infinite: true,
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            autoplaySpeed: 2000,
-                            speed:1000,
-                            dots:true,
-                            arrows:false
+                $('.titleani').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    speed:4000,
+                    dots:true,
+                    arrows:true,
+                    responsive:[
+                        {
+                            breakpoint: 1201,
+                            settings: {
+                                infinite: true,
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                autoplay: true,
+                                autoplaySpeed: 2000,
+                                speed:1000,
+                                dots:true,
+                                arrows:false
+                            }
+                        },
+                        {
+                            breakpoint: 769,
+                            settings: {
+                                infinite: true,
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                autoplay: true,
+                                autoplaySpeed: 2000,
+                                speed:1000,
+                                dots:true,
+                                arrows:false
+                            }
                         }
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            infinite: true,
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            autoplaySpeed: 2000,
-                            speed:1000,
-                            dots:true,
-                            arrows:false
-                        }
-                    }
-                ]    
-            });
-        };
+                    ]    
+                });
+            };
             $("#subtitle").load("subtitle.html"),function(){
               titleani();
             };
