@@ -23,14 +23,14 @@
     $(document).ready(function(){
             function doc(){ // 함수 이름
             // 목록항목의 p와 a를 둘러싸시오
-            $("#product ul.list li").each(function(){// each()는 앞요소갯수만큼 순차적으로 실행하시오; 
+                $("#product ul.list li").each(function(){// each()는 앞요소갯수만큼 순차적으로 실행하시오; 
                     $(this).children("p,a").wrapAll("<div class='wtext'></div>"); 
                     // wrapAll('<태그></태그');앞요소를 둘러싸시오(괄호안의 태그로)
                     $(".wtext").hide();
                 });           
                 // 프로덕트 제품오버시 설명글 표시
                     //목록항목에 마우스올리면 실행하시오
-            $("#product ul.list li").hover(
+                $("#product ul.list li").hover(
                     function(){ //mouseenter
                         // 마우스올린 li의 자식인 wtext를 fadeIn();하시오
                         $(this).children(".wtext").stop().fadeIn();//fadeIn() 서서히 나타나게 하시오
@@ -48,7 +48,7 @@
                     }
             ); 
             /* 반응형에 따른 요소제어(보이기) */
-            if($(window).width()<=1200){ // <= 작거나 같다(비교연산자) / $(window).width() 윈도우의 크기값을 가져와라
+                if($(window).width()<=1200){ // <= 작거나 같다(비교연산자) / $(window).width() 윈도우의 크기값을 가져와라
                     // 모바일시 brand제목을 헤더로 옮기기
                     $("aside .wrap h2").appendTo("header .wrap nav"); 
                     /* 타이틀이미지 모바일용으로 교체 */
@@ -100,7 +100,7 @@
 
                 }
             //윈도우창사이즈가 바뀌면 실행하시오
-            $(window).resize(function(){
+                $(window).resize(function(){
                     if($(window).width()<=1200){
                         $("aside .wrap h2").appendTo("header .wrap nav"); 
                     /* 타이틀이미지 모바일용으로 교체 */
@@ -245,7 +245,7 @@
                 });
 
             // h1요소에 마우스진입하면 (wgnb가 슬라이드업)
-            $("header .wrap nav h1").mouseenter(function(){
+                $("header .wrap nav h1").mouseenter(function(){
                 $("header .wrap nav .wgnb").slideUp();
             });
 
