@@ -116,7 +116,7 @@ header .wrap nav .wgnb{
   left: 0;
   top: 120px;
   display: none;
-  height: 240px;
+  height:240px; 
 }
 header .wrap nav .wgnb *{
   color:white;
